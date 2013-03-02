@@ -35,17 +35,10 @@ int main(void)
 	counterParties cp[PARTIES_NUM];
 	setupCounterparties(cp);
 	allocateDeals(cp);
-	cout<<endl<<"Allocation Runtime: "<<double(timeEnd)/double(CLOCKS_PER_SEC)<<" seconds";
+	cout<<endl<<"Allocation Runtime: "<<double(clock())/double(CLOCKS_PER_SEC)<<" seconds";
 	cout<<endl<<"end";
 
-	for (int i=0;i<PARTIES_NUM;i++)
-	{
-		cout<<endl<<i<<" Deals: "<<cp[i].totalDeals<<" Net: "<<cp[i].netDeal<<" Hazard: "<<cp[i].hazardRate;
-	}
-
-
-	clock_t timeEnd=clock();
-	cout<<endl<<"Total Runtime: "<<double(timeEnd)/double(CLOCKS_PER_SEC)<<" seconds";
+	cout<<endl<<"Total Runtime: "<<double(clock())/double(CLOCKS_PER_SEC)<<" seconds";
 	return 0;
 }
 
